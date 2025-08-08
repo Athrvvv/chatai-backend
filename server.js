@@ -12,7 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Use port from .env or default to 5000
 
 // === Middleware ===
-app.use(cors());      // Enable CORS
+app.use(cors({
+  origin: 'https://chatai.vercel.app' // Replace with your Vercel URL
+}));      // Enable CORS
 app.use(express.json()); // Parse JSON request bodies
 
 // === API Routes ===
